@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class LineScript : MonoBehaviour
+{
+    public float moveSpeed = 1;
+    float xDirection;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //kh bam sang trai -1, bam sang phai +1
+        xDirection = Input.GetAxisRaw("Horizontal");
+        float moveStep = moveSpeed * xDirection * Time.deltaTime;
+        Debug.Log("Move step" + moveStep);
+        transform.position += new Vector3(moveStep, 0, 0);
+    }
+}
